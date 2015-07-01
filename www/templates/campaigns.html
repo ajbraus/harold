@@ -11,7 +11,11 @@
         <div class='text-left'>
           <p>{{campaign.topic}}</p>
           <p><i class='icon ion-ios-location-outline'></i> {{campaign.location}}</p>
+          <p>%{{campaign.percent_backed}} of {{campaign.goal}} already backed</p>
+          <p>{{campaign.days_left}} Days Left</p>
+          <p>{{campaign.starts_on}} - {{campaign.ends_on}}</p>
         </div>
+        <progress max="100" value="{{campaign.percent_backed}}"></progress>
       </div>
       <div class="item item-avatar">
         <img ng-src="{{campaign.contributor.image_url}}">
