@@ -61,13 +61,13 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('CampaignsCtrl', function($scope, $ionicModal) {
+.controller('CampaignsCtrl', function($scope, $ionicModal, $location) {
   $scope.campaigns = [
-    { id: 1, topic: "Environment", contributor: {'name': "John Doe"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
-    { id: 2, topic: "Environment", contributor: {'name': "John Doe"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
-    { id: 3, topic: "Environment", contributor: {'name': "John Doe"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
-    { id: 4, topic: "Environment", contributor: {'name': "John Doe"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
-    { id: 5, topic: "Environment", contributor: {'name': "John Doe"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"}
+    { id: 1, topic: "Environment", location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
+    { id: 2, topic: "Environment", location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
+    { id: 3, topic: "Environment", location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
+    { id: 4, topic: "Environment", location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
+    { id: 5, topic: "Environment", location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"}
   ];
 
   $ionicModal.fromTemplateUrl('my-modal.html', {
@@ -94,6 +94,10 @@ angular.module('starter.controllers', [])
   $scope.$on('modal.removed', function() {
     // Execute action
   });
+
+  $scope.goToCampaign = function(campaign_id) {
+    $location.path("/app/campaigns/" + campaign_id)
+  }
 })
 
 .controller('CampaignCtrl', function($scope, $stateParams) {

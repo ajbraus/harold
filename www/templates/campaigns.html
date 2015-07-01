@@ -5,14 +5,20 @@
     </button>
   </ion-nav-buttons>
   <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="campaign in campaigns" class="item-text-wrap item-thumbnail-left" href="#/app/campaigns/{{campaign.id}}">
-        <img ng-src="{{campaign.image_url}}"/>
+    <div class="list card" ng-repeat="campaign in campaigns" ng-click="goToCampaign(campaign.id)">
+      <div class="item item-image">
+        <img ng-src="{{campaign.image_url}}">
+        <div class='text-left'>
+          <p>{{campaign.topic}}</p>
+          <p><i class='icon ion-ios-location-outline'></i> {{campaign.location}}</p>
+        </div>
+      </div>
+      <div class="item item-avatar">
+        <img ng-src="{{campaign.contributor.image_url}}">
         <h2>{{campaign.title}}</h2>
-        <p>{{campaign.topic}}</p>
         <p>{{campaign.contributor.name}}</p>
-      </ion-item>
-    </ion-list>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
 
@@ -27,7 +33,7 @@
         </button>
       </div>
     </ion-header-bar>
-    <ion-content>
+    <ion-content scroll='true'>
       <ion-list>
         <ion-item>Trending (15)</ion-item>
         <ion-item>Arts & Entertainment (15)</ion-item>
