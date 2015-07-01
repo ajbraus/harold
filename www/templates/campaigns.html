@@ -1,0 +1,48 @@
+<ion-view view-title="Campaigns">
+  <ion-nav-buttons side="right">
+    <button class="button button-clear" ng-click="showTopics()">
+      <i class="icon ion-ios-settings"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="campaign in campaigns" class="item-text-wrap item-thumbnail-left" href="#/app/campaigns/{{campaign.id}}">
+        <img ng-src="{{campaign.image_url}}"/>
+        <h2>{{campaign.title}}</h2>
+        <p>{{campaign.topic}}</p>
+        <p>{{campaign.contributor.name}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+
+
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Campaign Topics</h1>
+      <div class="buttons">
+        <button class="button button-clear" ng-click="closeModal()">
+          <i class="icon ion-close-round"></i>
+        </button>
+      </div>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item>Trending (15)</ion-item>
+        <ion-item>Arts & Entertainment (15)</ion-item>
+        <ion-item>Arts & Entertainment (15)</ion-item>
+        <ion-item>Enviroment (15)</ion-item>
+        <ion-item>Health (15)</ion-item>
+        <ion-item>Science (15)</ion-item>
+        <ion-item>U.S. Politics (15)</ion-item>
+        <ion-item>World News (15)</ion-item>
+        <ion-item>Sports (20)</ion-item>
+        <ion-item>Technology (35)</ion-item>
+        <ion-item>United States (40)</ion-item>
+        <ion-item>World Politics</ion-item>
+        <ion-item>Satirical News</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-modal-view>
+</script>

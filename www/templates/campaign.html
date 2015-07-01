@@ -1,0 +1,19 @@
+<ion-view>
+  <ion-nav-title>
+    <button class="button button-outline button-positive button-header button-small" ng-click="followStory()">
+      Share Campaign
+    </button>
+  </ion-nav-title>
+  <ion-content>
+    <h4 class='padding title'>{{campaign.title}}</h4>
+    <p>{{campaign.author}}</p>
+    <ion-list>
+      <div class='card'>
+        <p class='padding'>{{campaign.summary}}</p>
+      </div>
+    </ion-list>
+    <button class='button button-block button-positive' ng-click="backCampaign()">
+      Back Campaign
+    </button>
+  </ion-content>
+</ion-view>

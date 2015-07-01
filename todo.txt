@@ -1,0 +1,33 @@
+Campaigns
+  Create FOMO/urgency/100% funded. Starts on, Ends on.
+    limp, walk, jog, run, sprint
+
+  Category (Environment)
+  Topic (Endangered Dolphins)
+  Location
+
+  trending campaigns
+  follow categories
+
+Campaign
+  back this campaign
+
+Articles
+  search bar
+
+Article
+  pull quote
+  "more on" link
+  map
+  Further reading
+  Our Sources
+  contributor
+  campaign 
+  
+Contributor
+  - live campaigns
+  - recent articles
+  - archived articles/campaigns
+
+
+improve SEO

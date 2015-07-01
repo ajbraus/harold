@@ -1,0 +1,22 @@
+<ion-view>
+  <ion-nav-title>
+    <button class="button button-outline button-calm button-header button-small" ng-click="followStory()">Follow Story</button>
+  </ion-nav-title>
+  <ion-nav-buttons side="right">
+    <button class="button button-clear" ng-click="shareArticle()">
+      <i class="icon ion-ios-upload-outline"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <img ng-src="{{article.image_url}}"/>
+    <h4 class='padding title'>{{article.title}}</h4>
+    <p>{{article.published_at}}</p>
+    <p>{{article.author}}</p>
+    <p>{{article.campaign}}</p>
+    <ion-list>
+      <div class='card'>
+        <p class='padding'>{{article.body}}</p>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>
