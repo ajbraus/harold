@@ -5,15 +5,46 @@
     </button>
   </ion-nav-title>
   <ion-content>
-    <h4 class='padding title'>{{campaign.title}}</h4>
-    <p>{{campaign.author}}</p>
     <ion-list>
-      <div class='card'>
-        <p class='padding'>{{campaign.summary}}</p>
+      <ion-item class='item-thumbnail-right item-text-wrap'>
+        <img ng-src="{{campaign.image_url}}">
+        <h2>{{campaign.title}}</h2>
+        <p><i class='icon ion-ios-paper-outline'></i> {{campaign.topic}}</p>
+        <br>
+        <p>{{campaign.starts_on}} - {{campaign.ends_on}}</p>
+      </ion-item>
+      <div class="embed-responsive embed-responsive-16by9">
+        <youtube-video class="embed-responsive-item" 
+                       video-url="campaign.video_url" 
+                       player-vars="playerVars" 
+                       player-width="'100%'" 
+                       player-height="'200px'">
+        </youtube-video>
       </div>
+      <ion-item class='item-image'>
+        <div class='text-left padding pos-rel'>
+          <p>{{campaign.percent_backed}}% of {{campaign.goal}} backed</p>
+          <p class='days-left'>{{campaign.days_left}} days left</p>
+        </div>
+      </ion-item>
+      <progress max="100" value="{{campaign.percent_backed}}"></progress>
+      <ion-item class='input'>
+        <input type='text' style="width:50%;" placeholder="Amount per Article" value="$1"/>
+        <input type='text' style="width:50%;" placeholder="Max per Month" value="$5"/>
+      </ion-item>
+      <button class="button button-positive button-block" ng-click="backCampaign()">Back Campaign</button>
+      <ion-item class='item-avatar-left'>
+        <img ng-src="{{campaign.contributor.image_url}}"/>
+        <h2>{{campaign.contributor.name}}</h2>
+        <p><i class='icon ion-ios-location-outline'></i> {{campaign.location}}</p>
+      </ion-item>
+<!--       <ion-item class='item-image'>
+        <img ng-src="{{campaign.image_url}}">
+      </ion-item> -->
+      <ion-item class='item-text-wrap'>
+        <h2>Summary</h2>
+        <p>{{campaign.summary}}</p>
+      </ion-item>
     </ion-list>
-    <button class='button button-block button-positive' ng-click="backCampaign()">
-      Back Campaign
-    </button>
   </ion-content>
 </ion-view>

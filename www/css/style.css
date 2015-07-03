@@ -41,9 +41,7 @@ progress[value] {
    appearance: none;
   margin:0;
   width: 100%;
-  height: 2px;
-  
-  margin-top:10px;
+  height: 3px;
 }
 
 progress[value]::-webkit-progress-value {
@@ -55,4 +53,84 @@ progress[value]::-webkit-progress-bar {
   background-color: #eee;
   /*border-radius: 2px;*/
   /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;*/
+}
+
+.article-image {
+
+}
+
+.item.button.button-block, .button.button-full {
+  margin:0;
+}
+
+.embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.embed-responsive.embed-responsive-16by9 {
+  padding-bottom: 56.25%;
+}
+
+.embed-responsive-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.location {
+  position: absolute;
+  top:10px;
+  right:10px;
+}
+.days-left {
+  position: absolute;
+  bottom: 11px;
+  right:10px;
+}
+
+.button-sticky-bottom {
+  margin: 0;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.action-button {
+  position: absolute;
+  bottom: 22px;
+  right: 22px;
+  background-color: blue;
+  width: 60px;
+  height: 60px;
+  border-radius: 45px;
+  color: white;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.bar-footer {
+  padding:0;
+}
+
+.bar-footer .button {
+  margin:0;
+  border-radius: 0;
+  border:0;
+}
+
+.text-large {
+  font-size: 120% !important;
 }

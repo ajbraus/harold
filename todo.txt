@@ -1,16 +1,11 @@
-Campaigns
-  Create FOMO/urgency/100% funded. Starts on, Ends on.
-    limp, walk, jog, run, sprint
-
-  Category (Environment)
-  Topic (Endangered Dolphins)
-  Location
-
-  trending campaigns
-  follow categories
+Campaigns  
+  follow categories of campaigns
+  follow campaigns
+  "share backer"
 
 Campaign
-  back this campaign
+  back this campaign (defaulted $1/article, $4/month)
+  Rewards? Private vs. Public? Bonus material? Thanks to fans
 
 Articles
   search bar
@@ -28,6 +23,5 @@ Contributor
   - live campaigns
   - recent articles
   - archived articles/campaigns
-
 
 improve SEO

@@ -8,8 +8,11 @@
     </button>
   </ion-nav-buttons>
   <ion-content>
-    <img ng-src="{{article.image_url}}"/>
+    <div class="article-image">
+      <img ng-src="{{article.image_url}}"/>
+    </div>
     <h4 class='padding title'>{{article.title}}</h4>
+    <a href="#/app/campaigns/{{article.campaign_id}}">Campaign</a>
     <p>{{article.published_at}}</p>
     <p>{{article.author}}</p>
     <p>{{article.campaign}}</p>

@@ -6,21 +6,23 @@
   </ion-nav-buttons>
   <ion-content>
     <div class="list card" ng-repeat="campaign in campaigns" ng-click="goToCampaign(campaign.id)">
+      <ion-item>
+        <h2 class='title'>{{campaign.title}}</h2>
+      </ion-item>
       <div class="item item-image">
         <img ng-src="{{campaign.image_url}}">
-        <div class='text-left'>
-          <p>{{campaign.topic}}</p>
-          <p><i class='icon ion-ios-location-outline'></i> {{campaign.location}}</p>
-          <p>%{{campaign.percent_backed}} of {{campaign.goal}} already backed</p>
-          <p>{{campaign.days_left}} Days Left</p>
-          <p>{{campaign.starts_on}} - {{campaign.ends_on}}</p>
+        <div class='text-left padding pos-rel'>
+          <p><i class='icon ion-ios-paper-outline'></i> {{campaign.topic}}</p>
+          <p class='location'><i class='icon ion-ios-location-outline'></i> {{campaign.location}}</p>
+          <p>{{campaign.percent_backed}}% of {{campaign.goal}} backed</p>
+          <p class='days-left'>{{campaign.days_left}} days left</p>
         </div>
         <progress max="100" value="{{campaign.percent_backed}}"></progress>
       </div>
       <div class="item item-avatar">
         <img ng-src="{{campaign.contributor.image_url}}">
-        <h2>{{campaign.title}}</h2>
-        <p>{{campaign.contributor.name}}</p>
+        <h2>{{campaign.contributor.name}}</h2>
+        <p><i class='icon ion-ios-location-outline'></i> {{campaign.location}}</p>
       </div>
     </div>
   </ion-content>

@@ -43,16 +43,17 @@ angular.module('starter.controllers', [])
 
 .controller('ArticlesCtrl', function($scope) {
   $scope.articles = [
-    { id: 1, topic: "Environment", title: 'Fishing reduced endangered porpoise population to 97', image_url: "http://www.crystalvaults.com/images/bagua-square.gif"},
-    { id: 2, topic: "Environment", title: 'Pakistan suspends executions for Ramadan', image_url: "http://www.crystalvaults.com/images/bagua-square.gif"},
-    { id: 3, topic: "Environment", title: 'Dubstep', image_url: "http://www.crystalvaults.com/images/bagua-square.gif"},
-    { id: 4, topic: "Environment", title: 'Indie', image_url: "http://www.crystalvaults.com/images/bagua-square.gif"},
-    { id: 5, topic: "Environment", title: 'Rap', image_url: "http://www.crystalvaults.com/images/bagua-square.gif"}
+    { id: 1, campaing_id: 1, topic: "Environment", title: 'Fishing reduced endangered porpoise population to 97', image_url: "http://www.crystalvaults.com/images/bagua-square.gif"},
+    { id: 2, campaing_id: 1, topic: "Environment", title: 'Pakistan suspends executions for Ramadan', image_url: "http://www.crystalvaults.com/images/bagua-square.gif"},
+    { id: 3, campaing_id: 1, topic: "Environment", title: 'Dubstep', image_url: "http://www.crystalvaults.com/images/bagua-square.gif"},
+    { id: 4, campaing_id: 1, topic: "Environment", title: 'Indie', image_url: "http://www.crystalvaults.com/images/bagua-square.gif"},
+    { id: 5, campaing_id: 1, topic: "Environment", title: 'Rap', image_url: "http://www.crystalvaults.com/images/bagua-square.gif"}
   ];
 })
 
 .controller('ArticleCtrl', function($scope, $stateParams) {
   $scope.article = { id: 1, 
+                     campaign_id: 1,
                      topic: "Environment", 
                      title: 'Fishing reduced endangered porpoise population to 97', 
                      image_url: "http://www.crystalvaults.com/images/bagua-square.gif",
@@ -63,11 +64,11 @@ angular.module('starter.controllers', [])
 
 .controller('CampaignsCtrl', function($scope, $ionicModal, $location) {
   $scope.campaigns = [
-    { id: 1, topic: "Environment", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 40, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
-    { id: 2, topic: "Environment", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 80, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
-    { id: 3, topic: "Environment", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 50, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
-    { id: 4, topic: "Environment", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 80, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
-    { id: 5, topic: "Environment", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 70, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"}
+    { id: 1, topic: "Environment", video_url: "https://www.youtube.com/watch?v=e-ORhEE9VVg", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 40, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
+    { id: 2, topic: "Environment", video_url: "https://www.youtube.com/watch?v=e-ORhEE9VVg", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 80, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
+    { id: 3, topic: "Environment", video_url: "https://www.youtube.com/watch?v=e-ORhEE9VVg", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 50, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
+    { id: 4, topic: "Environment", video_url: "https://www.youtube.com/watch?v=e-ORhEE9VVg", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 80, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
+    { id: 5, topic: "Environment", video_url: "https://www.youtube.com/watch?v=e-ORhEE9VVg", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 70, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"}
   ];
 
   $ionicModal.fromTemplateUrl('my-modal.html', {
@@ -101,6 +102,14 @@ angular.module('starter.controllers', [])
 })
 
 .controller('CampaignCtrl', function($scope, $stateParams) {
+  $scope.playerVars = {
+    theme: "light",
+    controls: 0,
+    autoplay: 1,
+    showinfo: 0,
+    rel:0
+  }
+
   $scope.campaign = { id: 1, 
                       topic: "Environment", 
                       days_left: "20", 
@@ -110,6 +119,7 @@ angular.module('starter.controllers', [])
                       percent_backed: 40, 
                       location: "New York City", 
                       contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, 
+                      video_url: "https://www.youtube.com/watch?v=e-ORhEE9VVg",
                       title: 'Report on awesome stuff', 
                       image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg",
                       summary: "I want to report on super awesome stuff. I want to report on super awesome stuff. I want to report on super awesome stuff. I want to report on super awesome stuff. I want to report on super awesome stuff."
