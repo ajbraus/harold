@@ -5,6 +5,7 @@ Campaigns
 
 Campaign
   back this campaign (defaulted $1/article, $4/month)
+  use agnositic video embed (not just youtube)
   Rewards? Private vs. Public? Bonus material? Thanks to fans
 
 Articles
@@ -25,3 +26,8 @@ Contributor
   - archived articles/campaigns
 
 improve SEO
+
+cartoons
+photo journalism
+video journalism
+satirical news
