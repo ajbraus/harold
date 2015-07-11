@@ -28,10 +28,14 @@
         </div>
       </ion-item>
       <progress max="100" value="{{campaign.percent_backed}}"></progress>
-      <ion-item class='input'>
-        <input type='text' style="width:50%;" placeholder="Amount per Article" value="$1"/>
-        <input type='text' style="width:50%;" placeholder="Max per Month" value="$5"/>
-      </ion-item>
+      <label class="item item-input">
+        <span class="input-label">Dollars Per Article</span>
+        <input type="text" ng-model='sponsorship.dollars_per_article' placeholder="$1">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Max per Month</span>
+        <input type="text" ng-model='sponsorship.max_per_month' placeholder="$5">
+      </label>
       <button class="button button-positive button-block" ng-click="backCampaign()">Back Campaign</button>
       <ion-item class='item-avatar-left'>
         <img ng-src="{{campaign.contributor.image_url}}"/>

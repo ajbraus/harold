@@ -23,6 +23,7 @@ ion-content {
 .sign-in {
   font-size: 16px;
   padding: 10px;
+  padding-top:32px;
   padding-left: 12px;
   font-weight: bold;
   color: rgb(88, 197, 197);
@@ -133,4 +134,9 @@ progress[value]::-webkit-progress-bar {
 
 .text-large {
   font-size: 120% !important;
+}
+
+.sign-in.item-icon-right .icon {
+  right: 11px;
+  top: 12px;
 }

@@ -19,7 +19,7 @@
         <p>{{article.author}}</p>
       </div>
       <div class='card'>
-        <p class='padding'>{{article.body}}</p>
+        <p ng-bind-html="article.body" class='padding'></p>
       </div>
     </ion-list>
   </ion-content>

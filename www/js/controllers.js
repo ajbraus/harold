@@ -64,11 +64,11 @@ angular.module('starter.controllers', [])
 
 .controller('CampaignsCtrl', function($scope, $ionicModal, $location) {
   $scope.campaigns = [
-    { id: 1, topic: "Environment", video_url: "https://www.youtube.com/watch?v=e-ORhEE9VVg", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 40, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
-    { id: 2, topic: "Environment", video_url: "https://www.youtube.com/watch?v=e-ORhEE9VVg", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 80, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
-    { id: 3, topic: "Environment", video_url: "https://www.youtube.com/watch?v=e-ORhEE9VVg", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 50, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
-    { id: 4, topic: "Environment", video_url: "https://www.youtube.com/watch?v=e-ORhEE9VVg", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 80, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
-    { id: 5, topic: "Environment", video_url: "https://www.youtube.com/watch?v=e-ORhEE9VVg", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 70, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"}
+    { id: 1, topic: "Environment", video_url: "https://www.youtube.com/watch?v=akiVi1sR2rM", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 40, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
+    { id: 2, topic: "Environment", video_url: "https://www.youtube.com/watch?v=akiVi1sR2rM", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 80, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
+    { id: 3, topic: "Environment", video_url: "https://www.youtube.com/watch?v=akiVi1sR2rM", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 50, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
+    { id: 4, topic: "Environment", video_url: "https://www.youtube.com/watch?v=akiVi1sR2rM", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 80, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
+    { id: 5, topic: "Environment", video_url: "https://www.youtube.com/watch?v=akiVi1sR2rM", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 70, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"}
   ];
 
   $ionicModal.fromTemplateUrl('my-modal.html', {
@@ -110,6 +110,11 @@ angular.module('starter.controllers', [])
     rel:0
   }
 
+  $scope.sponsorship = {
+    max_per_month: "$5"
+  , dollars_per_article: "$1"
+  }
+
   $scope.campaign = { id: 1, 
                       topic: "Environment", 
                       days_left: "20", 
@@ -119,7 +124,7 @@ angular.module('starter.controllers', [])
                       percent_backed: 40, 
                       location: "New York City", 
                       contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, 
-                      video_url: "https://www.youtube.com/watch?v=e-ORhEE9VVg",
+                      video_url: "https://www.youtube.com/watch?v=akiVi1sR2rM",
                       title: 'Report on awesome stuff', 
                       image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg",
                       summary: "I want to report on super awesome stuff. I want to report on super awesome stuff. I want to report on super awesome stuff. I want to report on super awesome stuff. I want to report on super awesome stuff."
