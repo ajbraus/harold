@@ -8,15 +8,16 @@
     </button>
   </ion-nav-buttons>
   <ion-content>
-    <div class="article-image">
-      <img ng-src="{{article.image_url}}"/>
-    </div>
-    <h4 class='padding title'>{{article.title}}</h4>
-    <a href="#/app/campaigns/{{article.campaign_id}}">Campaign</a>
-    <p>{{article.published_at}}</p>
-    <p>{{article.author}}</p>
-    <p>{{article.campaign}}</p>
     <ion-list>
+      <div class="article-image">
+        <img ng-src="{{article.image_url}}"/>
+      </div>
+      <div class='card padding'>
+        <h4>{{article.title}}</h4>
+        <p><a href="#/app/campaigns/{{article.campaign_id}}">Campaign</a></p>
+        <p>{{article.published_at}}</p>
+        <p>{{article.author}}</p>
+      </div>
       <div class='card'>
         <p class='padding'>{{article.body}}</p>
       </div>
