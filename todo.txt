@@ -1,4 +1,9 @@
+Articles
+  search bar
+
 Campaigns  
+  back campaign modal
+  
   follow categories of campaigns
   follow campaigns
   "share backer"
@@ -7,9 +12,6 @@ Campaign
   back this campaign (defaulted $1/article, $4/month)
   use agnositic video embed (not just youtube)
   Rewards? Private vs. Public? Bonus material? Thanks to fans
-
-Articles
-  search bar
 
 Article
   pull quote
@@ -25,7 +27,9 @@ Contributor
   - recent articles
   - archived articles/campaigns
 
-improve SEO
+WEBSITE:
+  Medium style editor
+  improve SEO
 
 cartoons
 photo journalism

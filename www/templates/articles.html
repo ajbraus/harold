@@ -1,7 +1,7 @@
-<ion-view view-title="Herald">
+<ion-view view-title="Front Page">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="article in articles" class="item-text-wrap item-thumbnail-right" href="#/app/articles/{{article.id}}">
+      <ion-item ng-repeat="article in articles" class="item-text-wrap item-thumbnail-right" href="#/app/articles/{{article._id}}">
         <img ng-src="{{article.image_url}}"/>
         <h2>{{article.title}}</h2>
         <p>{{article.topic}}</p>

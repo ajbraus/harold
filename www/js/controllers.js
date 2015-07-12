@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('harold.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
   
@@ -41,37 +41,34 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ArticlesCtrl', function($scope) {
-  $scope.articles = [
-    { id: 1, campaing_id: 1, topic: "Environment", title: 'Fishing reduced endangered porpoise population to 97', image_url: "http://www.crystalvaults.com/images/bagua-square.gif"},
-    { id: 2, campaing_id: 1, topic: "Environment", title: 'Pakistan suspends executions for Ramadan', image_url: "http://www.crystalvaults.com/images/bagua-square.gif"},
-    { id: 3, campaing_id: 1, topic: "Environment", title: 'Dubstep', image_url: "http://www.crystalvaults.com/images/bagua-square.gif"},
-    { id: 4, campaing_id: 1, topic: "Environment", title: 'Indie', image_url: "http://www.crystalvaults.com/images/bagua-square.gif"},
-    { id: 5, campaing_id: 1, topic: "Environment", title: 'Rap', image_url: "http://www.crystalvaults.com/images/bagua-square.gif"}
-  ];
+.controller('ArticlesCtrl', function($scope, Article) {
+  $scope.articles = Article.query()
 })
 
-.controller('ArticleCtrl', function($scope, $stateParams) {
-  $scope.article = { id: 1, 
-                     campaign_id: 1,
-                     topic: "Environment", 
-                     title: 'Fishing reduced endangered porpoise population to 97', 
-                     image_url: "http://www.crystalvaults.com/images/bagua-square.gif",
-                     body: "The vaquita, an aquatic mammal which only exists in one small area of Mexico, is on the verge of extinction.  Can it still be saved? <p>The vaquita, which in Spanish means “little cow,” is a type of porpoise endemic to Mexico.  It’s the smallest and rarest type of porpoise.  Its scientific name is Phocoena sinus.  <p>One curious thing about the vaquita is that the female of the species is larger than the male, which is rare for mammals.  The male is typically 53.1 inches long, while the female is 55.4 inches long.  <p>Not only is the vaquita endemic to the country of Mexico, it is endemic to only one area of Mexico – the lagoons of the Colorado River delta and nearshore areas of the upper Sea of Cortes, also called the Gulf of California. (This body of water, between the Baja California peninsula and the Mexican mainland, is said to be one of the most biologically diverse seas in the world.)   <p>The vaquita has been known to science only since the 1950s, and it has been declining ever since and is now in danger of extinction."
-                   }
-
+.controller('ArticleCtrl', function($scope, $stateParams, Article) {
+  $scope.article = Article.get({ id: $stateParams.articleId })
 })
 
-.controller('CampaignsCtrl', function($scope, $ionicModal, $location) {
-  $scope.campaigns = [
-    { id: 1, topic: "Environment", video_url: "https://www.youtube.com/watch?v=akiVi1sR2rM", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 40, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
-    { id: 2, topic: "Environment", video_url: "https://www.youtube.com/watch?v=akiVi1sR2rM", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 80, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
-    { id: 3, topic: "Environment", video_url: "https://www.youtube.com/watch?v=akiVi1sR2rM", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 50, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
-    { id: 4, topic: "Environment", video_url: "https://www.youtube.com/watch?v=akiVi1sR2rM", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 80, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"},
-    { id: 5, topic: "Environment", video_url: "https://www.youtube.com/watch?v=akiVi1sR2rM", days_left: "20", starts_on: "12/12/2015", ends_on: "1/30/2016", goal: "$1,000", percent_backed: 70, location: "New York City", contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, title: 'Report on awesome stuff', image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg"}
-  ];
+.controller('NewCampaignCtrl', function($scope, $stateParams, Campaign) {
+  $scope.campaign = {};
+  $scope.createCampaign = function() {
+    Campaign.save($scope.campaign)
+      .success(function(data) {
+        console.log(data)
+      })
+      .error(function(err) { 
+        console.log(err)
+      })
 
-  $ionicModal.fromTemplateUrl('my-modal.html', {
+    });
+  });
+})
+
+
+.controller('CampaignsCtrl', function($scope, $ionicModal, $location, Campaign) {
+  $scope.campaigns = Campaign.query();
+
+  $ionicModal.fromTemplateUrl('campaign-topics-modal.html', {
     scope: $scope,
     animation: 'slide-in-up'
   }).then(function(modal) {
@@ -83,25 +80,15 @@ angular.module('starter.controllers', [])
   $scope.closeModal = function() {
     $scope.modal.hide();
   };
-  //Cleanup the modal when we're done with it!
-  $scope.$on('$destroy', function() {
-    $scope.modal.remove();
-  });
-  // Execute action on hide modal
-  $scope.$on('modal.hidden', function() {
-    // Execute action
-  });
-  // Execute action on remove modal
-  $scope.$on('modal.removed', function() {
-    // Execute action
-  });
 
   $scope.goToCampaign = function(campaign_id) {
     $location.path("/app/campaigns/" + campaign_id)
   }
 })
 
-.controller('CampaignCtrl', function($scope, $stateParams) {
+.controller('CampaignCtrl', function($scope, $stateParams, $ionicModal, Campaign) {
+  $scope.campaign = Campaign.get({ id: $stateParams.campaignId });
+
   $scope.playerVars = {
     theme: "light",
     controls: 0,
@@ -115,21 +102,18 @@ angular.module('starter.controllers', [])
   , dollars_per_article: "$1"
   }
 
-  $scope.campaign = { id: 1, 
-                      topic: "Environment", 
-                      days_left: "20", 
-                      starts_on: "12/12/2015", 
-                      ends_on: "1/30/2016", 
-                      goal: "$1,000", 
-                      percent_backed: 40, 
-                      location: "New York City", 
-                      contributor: {'name': "John Doe", "image_url": "http://www.likecool.com/Gear/Pic/One%20Trippy%20Profile%20Pic/One-Trippy-Profile-Pic.jpg"}, 
-                      video_url: "https://www.youtube.com/watch?v=akiVi1sR2rM",
-                      title: 'Report on awesome stuff', 
-                      image_url: "http://uploads0.wikiart.org/images/m-c-escher/square-limit-colour.jpg",
-                      summary: "I want to report on super awesome stuff. I want to report on super awesome stuff. I want to report on super awesome stuff. I want to report on super awesome stuff. I want to report on super awesome stuff."
-                    }
-
+  $ionicModal.fromTemplateUrl('back-campaign-modal.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  $scope.openModal = function() {
+    $scope.modal.show();
+  };
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
 })
 
 

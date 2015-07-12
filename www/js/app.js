@@ -1,14 +1,19 @@
-// Ionic Starter App
+// Ionic Harold App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// 'harold' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'youtube-embed', 'starter.controllers'])
+// 'harold.controllers' is found in controllers.js
+angular.module('harold', ['ionic', 
+                          'youtube-embed', 
+                          'ngResource',
+                          'harold.controllers', 
+                          'harold.services'])
 
 //https://github.com/brandly/angular-youtube-embed
 
-// .constant('TOPICS', ['']) //PRODUCTION
+.constant('HOST', 'http://localhost:1337/api') //DEVELOPMENT
+// .constant('HOST', 'http://harold-server.herokuapp.com/api') //PRODUCTION
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

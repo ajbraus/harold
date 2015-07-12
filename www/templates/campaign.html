@@ -6,12 +6,17 @@
   </ion-nav-title>
   <ion-content>
     <ion-list>
-      <ion-item class='item-thumbnail-right item-text-wrap'>
+      <ion-item class='item-thumbnail-left item-text-wrap'>
         <img ng-src="{{campaign.image_url}}">
         <h2>{{campaign.title}}</h2>
         <p><i class='icon ion-ios-paper-outline'></i> {{campaign.topic}}</p>
-        <br>
-        <p>{{campaign.starts_on}} - {{campaign.ends_on}}</p>
+      </ion-item>
+      <progress max="100" value="{{campaign.percent_backed}}"></progress>
+      <ion-item class='item-image'>
+        <div class='text-left padding pos-rel'>
+          <p>{{campaign.percent_backed}}% of {{campaign.goal}} backed</p>
+          <p class='days-left'>{{campaign.days_left}} days left</p>
+        </div>
       </ion-item>
       <div class="embed-responsive embed-responsive-16by9">
         <youtube-video class="embed-responsive-item" 
@@ -21,22 +26,9 @@
                        player-height="'200px'">
         </youtube-video>
       </div>
-      <ion-item class='item-image'>
-        <div class='text-left padding pos-rel'>
-          <p>{{campaign.percent_backed}}% of {{campaign.goal}} backed</p>
-          <p class='days-left'>{{campaign.days_left}} days left</p>
-        </div>
-      </ion-item>
-      <progress max="100" value="{{campaign.percent_backed}}"></progress>
-      <label class="item item-input">
-        <span class="input-label">Dollars Per Article</span>
-        <input type="text" ng-model='sponsorship.dollars_per_article' placeholder="$1">
+      <label class="item">
+        <button class="button button-block button-positive" ng-click="openModal()">Back Campaign</button>
       </label>
-      <label class="item item-input">
-        <span class="input-label">Max per Month</span>
-        <input type="text" ng-model='sponsorship.max_per_month' placeholder="$5">
-      </label>
-      <button class="button button-positive button-block" ng-click="backCampaign()">Back Campaign</button>
       <ion-item class='item-avatar-left'>
         <img ng-src="{{campaign.contributor.image_url}}"/>
         <h2>{{campaign.contributor.name}}</h2>
@@ -52,3 +44,37 @@
     </ion-list>
   </ion-content>
 </ion-view>
+
+
+<script id="back-campaign-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Back Campaign</h1>
+      <div class="buttons">
+        <button class="button button-clear" ng-click="closeModal()">
+          <i class="icon ion-close-round"></i>
+        </button>
+      </div>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+      <ion-item class='item-thumbnail-left item-text-wrap'>
+        <img ng-src="{{campaign.image_url}}">
+        <h2>{{campaign.title}}</h2>
+        <p><i class='icon ion-ios-paper-outline'></i> {{campaign.topic}}</p>
+      </ion-item>
+      <label class="item item-input">
+        <span class="input-label">Dollars Per Article</span>
+        <input type="text" ng-model='sponsorship.dollars_per_article' placeholder="$1">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Max per Month</span>
+        <input type="text" ng-model='sponsorship.max_per_month' placeholder="$5">
+      </label>
+      <label class="item">
+        <button class="button button-block button-positive" type="submit">Continue</button>
+      </label>
+      </ion-list>
+    </ion-content>
+  </ion-modal-view>
+</script>

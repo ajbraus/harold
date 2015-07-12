@@ -5,7 +5,7 @@
     </button>
   </ion-nav-buttons>
   <ion-content>
-    <div class="list card" ng-repeat="campaign in campaigns" ng-click="goToCampaign(campaign.id)">
+    <div class="list card" ng-repeat="campaign in campaigns" ng-click="goToCampaign(campaign._id)">
       <ion-item>
         <h2 class='title'>{{campaign.title}}</h2>
       </ion-item>
@@ -29,7 +29,7 @@
 </ion-view>
 
 
-<script id="my-modal.html" type="text/ng-template">
+<script id="campaign-topics-modal.html" type="text/ng-template">
   <ion-modal-view>
     <ion-header-bar>
       <h1 class="title">Campaign Topics</h1>
